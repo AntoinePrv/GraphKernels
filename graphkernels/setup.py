@@ -1,14 +1,15 @@
 from setuptools import setup
 
-setup(name = 'graphkernels',
-      version = '0.1.8',
+
+setup(
+	name = 'graphkernels',
+    version = '0.1.8',
 	description = 'Package for computing graph kernels',
 	url = 'https://github.com/eghisu/GraphKernels/tree/master/graphkernels',
 	author = 'Elisabetta Ghisu',
 	author_email = 'elisabetta.ghisu@bsse.ethz.ch',
 	license = 'ETH Zurich',
 	packages = ['graphkernels'],
-
-	install_requires = ['GKextCPy'],
+	install_requires = ['numpy', 'python-igraph', 'GKextCPy'],
 	package_data={'graphkernels': ['data.mutag']},
-	) # maybe to check github url
+) # maybe to check github url
