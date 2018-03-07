@@ -42,7 +42,7 @@ def GetGraphInfo(g):
     if len(g.vs.attributes()) == 0:
         g.vs["label"] = 1
 
-    v_attr_name = g.vs.attributes()[1]
+    v_attr_name = g.vs.attributes()[0]
     v_attr_values = np.asarray(g.vs[v_attr_name]).reshape(len(g.vs),1).astype(int)
 
     res = dict([('edge', E), ('vlabel', v_attr_values), ('vsize', len(g.vs)), ('esize', len(g.es)), ('maxdegree', g.maxdegree())])
