@@ -6,9 +6,15 @@ setup.py file for SWIG
 
 #from distutils.core import setup, Extension
 from setuptools import setup, Extension
+import numpy
 
-
-GKextCPy_module = Extension('_GKextCPy', sources=['GKextCPy_wrap.cxx', 'GKextCPy.cpp'],swig_opts=['-c++'], extra_compile_args = ["-std=c++11"])
+GKextCPy_module = Extension(
+	'_GKextCPy',
+	sources=['GKextCPy_wrap.cxx', 'GKextCPy.cpp'],
+	swig_opts=['-c++'],
+	extra_compile_args = ["-std=c++11"],
+	include_dirs=[numpy.get_include()]
+)
                            
 
 setup (name = 'GKextCPy',
